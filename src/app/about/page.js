@@ -5,16 +5,9 @@ import { useSpring, animated } from "react-spring";
 // import NavBar from "@/components/Navbar/Navbar";
 // import Footer from '@/components/components/Footer';
 
-
-
 const About = () => {
   return (
     <div className="bg-no repeat flex min-h-screen flex-col bg-dashboard bg-cover">
-      {/* Navbar */}
-      {/* <nav classNameName=" p-4">
-        <NavBar />
-      </nav> */}
-
       {/* Our Story Section */}
       <section classNameName="flex-grow flex w-full items-center justify-center px-50">
         <div className="flex justify-center">
@@ -49,7 +42,6 @@ const About = () => {
         </div>
       </section>
 
-      
       <section>
         <div className="mx-auto max-w-screen-xl px-4 py-8 text-center lg:px-6 lg:py-16">
           <div className="mx-auto mb-8 max-w-screen-sm lg:mb-16">

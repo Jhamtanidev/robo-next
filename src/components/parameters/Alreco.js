@@ -139,7 +139,7 @@ const Alreco = () => {
   return (
     <div className=" flex-display container mx-auto my-1 p-4 font-montserrat ">
       <div className="container mx-auto px-4 py-6 lg:px-10 lg:py-8 ">
-        <div className="grid  gap-1 md:grid-cols-3 sm:grid-cols-2  sm:p-2 lg:grid-cols-5 ">
+        <div className="grid  gap-1 sm:grid-cols-2 sm:p-2  md:grid-cols-3 lg:grid-cols-5 ">
           {Reco.map((record) => (
             <>
               <div

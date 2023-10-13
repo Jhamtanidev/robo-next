@@ -1,0 +1,124 @@
+/* Dashboard.css */
+
+.dashboard-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.table-container {
+  position: relative;
+  overflow: auto;
+  background: whitesmoke;
+}
+.card2 {
+  width: 166.45px;
+  height: 92.29px;
+  top: 136px;
+  left: 426px;
+  padding: 19.78px, 89.67px, 19.44px, 19.78px;
+  border-radius: 13.18px;
+  background-color: rgba(108, 107, 107, 0.78);
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Vertical and horizontal lines */
+.lines-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.vertical-line,
+.horizontal-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.vertical-line {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.horizontal-line {
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* Dashboard.css */
+
+/* ... (existing styles) */
+
+.animated-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: ripple 10s linear infinite;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 70%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(3);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .table-container {
+    overflow-x: auto;
+  }
+  table {
+    min-width: 100%;
+  }
+  th,
+  td {
+    white-space: nowrap;
+  }
+  .vertical-line,
+  .horizontal-line {
+    display: none;
+  }
+}

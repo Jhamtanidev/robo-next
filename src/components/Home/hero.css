@@ -1,0 +1,102 @@
+body {
+  background: #eef4ff;
+  margin: 0;
+}
+
+.spacer {
+  width: 100%;
+  height: 50vh;
+  background: #ddd;
+}
+.viscard {
+  height: 188;
+  width: 343;
+}
+
+.headline {
+  border-radius: 6px;
+  height: 5em;
+  width: 100%;
+}
+
+.text {
+  margin: 0.8em 0 0 0;
+  color: white;
+  border-radius: 6px;
+  height: 1em;
+  width: 100%;
+}
+
+.gallery {
+  display: flex;
+}
+
+.left {
+  width: 50%;
+}
+
+.detailsWrapper {
+  margin: auto;
+  width: 80%;
+}
+
+.details {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.photos {
+  margin-top: 50px;
+  width: 45vw;
+  height: 100%;
+  border-radius: 5%;
+  position: relative;
+  text-color: white;
+}
+
+.photo {
+  position: absolute;
+  width: 100%;
+  height: 60%;
+}
+
+.bluegrey {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.53),
+      rgba(255, 255, 255, 0.53)
+    ),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.bbe {
+  background: #a1caf1;
+}
+.skyblue {
+  background: #add8e6;
+}
+.raf {
+  background: #5d8aa8;
+}
+.bs {
+  background: #5d8aa8;
+}
+.turqoise {
+  background: #afeeee;
+}
+.rov1 {
+  background-image: url("/assets/rov1.jpg");
+}
+.Pv {
+  justify-content: center;
+}

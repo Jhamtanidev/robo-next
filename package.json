@@ -1,0 +1,52 @@
+{
+  "name": "robu",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@headlessui/react": "^1.7.16",
+    "@heroicons/react": "^1.0.6",
+    "@supabase/auth-helpers-nextjs": "^0.6.1",
+    "@supabase/supabase-js": "^2.21.0",
+    "apexcharts": "^3.42.0",
+    "chart.js": "^4.4.0",
+    "classnames": "^2.3.2",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.12",
+    "formik": "^2.4.3",
+    "fortawesome": "^0.0.1-security",
+    "framer-motion": "^10.16.2",
+    "gsap": "^3.12.2",
+    "next": "^13.4.13",
+    "react": "^18.2.0",
+    "react-apexcharts": "^1.4.1",
+    "react-dom": "^18.2.0",
+    "react-easy-swipe": "^0.0.23",
+    "react-fontawesome": "^1.7.1",
+    "react-icons": "^4.10.1",
+    "react-responsive-carousel": "^3.2.23",
+    "react-scroll": "^1.8.9",
+    "react-slick": "^0.29.0",
+    "react-spring": "^9.7.2",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^10.2.0",
+    "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.4",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.40.0",
+    "eslint-config-acme": "^2.0.0",
+    "postcss": "^8.4.27",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "tailwindcss": "^3.3.3"
+  }
+}

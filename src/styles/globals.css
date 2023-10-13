@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Wendy+One&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h2 {
+    @apply py-4 text-4xl font-black text-gray-800;
+  }
+  .bg-opacity-60 {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .button {
+    @apply custom-focus rounded-full border-2 border-blue-400 bg-white px-8 py-2 font-bold text-blue-400 hover:bg-blue-400 hover:text-white focus:bg-blue-400 focus:text-white;
+  }
+
+  .button-inverse {
+    @apply custom-focus rounded-full border-2 border-white bg-blue-400 px-8 py-2 font-bold text-white hover:border-blue-400 hover:bg-white hover:text-blue-400 focus:border-blue-400 focus:bg-white focus:text-blue-400;
+  }
+
+  .card {
+    @apply column min-w-[20rem] items-center gap-8 rounded-2xl bg-white px-4 py-8 shadow-md sm:min-w-[24rem] sm:px-10;
+  }
+
+  .column {
+    @apply flex flex-col items-start justify-center gap-4;
+  }
+
+  .custom-focus {
+    @apply focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2;
+  }
+
+  .heading {
+    @apply text-lg font-semibold text-gray-700;
+  }
+
+  .highlight {
+    @apply ml-1 rounded-lg bg-gray-100 p-2 font-mono;
+  }
+
+  .error {
+    @apply w-full text-center text-red-600;
+  }
+
+  .input {
+    @apply custom-focus w-full rounded-xl border border-slate-300 focus:shadow-none;
+  }
+
+  .link {
+    @apply custom-focus rounded-md font-semibold text-blue-400;
+  }
+
+  .row {
+    @apply flex flex-row items-center justify-start gap-1;
+  }
+
+  .btn {
+    @apply rounded-md bg-color-secondary px-9 py-3 font-bold capitalize duration-200 ease-in hover:opacity-80;
+  }
+  .card_btn {
+    @apply w-full rounded-md bg-color-primary-dark px-9 py-3 font-bold capitalize duration-200 ease-in hover:bg-color-secondary;
+  }
+  .title {
+    @apply text-3xl font-bold leading-snug md:text-4xl;
+  }
+  .blob1 {
+    @apply absolute -left-5 top-0 -z-10 h-80 w-80 overflow-hidden rounded-full bg-color-blob opacity-20 blur-xl;
+  }
+  .blob2 {
+    @apply absolute bottom-10 right-0 -z-10 h-80 w-80 overflow-hidden rounded-full bg-color-secondary opacity-30 blur-2xl;
+  }
+  .user-text {
+    display: none;
+  }
+  .user-text.active-text {
+    display: block;
+    animation: moveup 1s linear forwards;
+  }
+  .user-pic {
+    transition: all 0.2s ease;
+  }
+  .user-pic.active-pic {
+    border: 2px solid #4a6aaa;
+  }
+  @keyframes moveup {
+    0% {
+      margin-top: 40px;
+      opacity: 0;
+    }
+    50% {
+      margin-top: 20px;
+      opacity: 0.1;
+    }
+    100% {
+      margin-top: 0px;
+      opacity: 1;
+    }
+  }
+  .card {
+    perspective: 1000px;
+  }
+  .front,
+  .back {
+    backface-visibility: hidden;
+    transition: all 0.4s ease;
+  }
+  .front {
+    overflow: hidden;
+  }
+}

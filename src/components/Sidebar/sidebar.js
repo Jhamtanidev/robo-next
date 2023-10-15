@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState } from "react";
 import { HomeIcon, TemplateIcon, DatabaseIcon } from "@heroicons/react/solid";

@@ -8,7 +8,7 @@ import Alreco from "@/components/parameters/Alreco";
 import Tds from "@/components/parameters/Tds";
 import Sidebar from "@/components/Sidebar/sidebar";
 import RovStats from "@/components/parameters/rovstats";
-import Reletpos from "@/components/parameters/Reletpos";
+import Reletpos from "@/components/parameters/reletpos";  
 
 const page = ({ params }) => {
   let content;

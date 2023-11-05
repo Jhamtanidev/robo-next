@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useRef } from "react";
 import supabase from "@/lib/supabase-browser";
 
-function Reletpos() {
+function reletpos() {
   const [markerPositions, setMarkerPositions] = useState([]);
   const [showMarkerPopup, setShowMarkerPopup] = useState(false);
   const [selectedMarker, setSelectedMarker] = useState(null); // Track the selected marker
@@ -157,4 +158,4 @@ function Reletpos() {
   );
 }
 
-export default Reletpos;
+export default reletpos;

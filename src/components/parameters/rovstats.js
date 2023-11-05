@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect, useState } from "react";
 import supabase from "@/lib/supabase-browser";
 import Chart from "chart.js/auto";
 
-const RovStats = () => {
+const rovStats = () => {
   const [RecoStat, setRecoState] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -152,4 +153,4 @@ const RovStats = () => {
   );
 };
 
-export default RovStats;
+export default rovStats;

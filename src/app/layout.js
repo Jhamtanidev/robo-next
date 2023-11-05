@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar/Navbar";
+import NextTopLoader from "nextjs-toploader";
 import { AuthProvider } from "src/components/AuthProvider";
 import createClient from "src/lib/supabase-server";
 
@@ -38,6 +39,7 @@ export default async function RootLayout({ children }) {
                 <Navbar className="fixed left-0 top-0 z-10 w-full" />{" "}
                 {/* Add fixed class */}
                 {/* <Navbar className="fixed top-0 left-0 w-full z-10" />  */}
+                <NextTopLoader />
                 {children}
               </div>
               <Footer />

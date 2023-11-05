@@ -39,7 +39,7 @@ const SignIn = () => {
   }
  
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100 bg-dashboard font-montserrat text-black">
+    <div className="flex min-h-screen items-center justify-center bg-gray-100 bg-dashboard font-montserrat text-white">
       <div className="w-full max-w-md">
         <div
           className="rounded-lg bg-white p-8 shadow-md"
@@ -51,13 +51,13 @@ const SignIn = () => {
           <div className="text-center">
             {isSignUp ? (
               <>
-                <h2 className="mb-4 text-2xl font-semibold">Sign Up</h2>
-                <p className="text-black">Create an account to get started.</p>
+                <h2 className="text-white mb-4 text-2xl font-semibold ">Sign Up</h2>
+                <p className="text-white">Create an account to get started.</p>
               </>
             ) : (
               <>
-                <h2 className="mb-4 text-2xl font-semibold">Sign In</h2>
-                <p className="text-black-600">Welcome back! Please sign in.</p>
+                <h2 className="text-white mb-4 text-2xl font-semibold">Sign In</h2>
+                <p className="text-white">Welcome back! Please sign in.</p>
               </>
             )}
           </div>
@@ -78,7 +78,7 @@ const SignIn = () => {
                   <div className="mb-6">
                     <label
                       htmlFor="email"
-                      className="mb-2 block rounded text-sm font-bold text-black"
+                      className="mb-2 block rounded text-sm font-bold text-white"
                     >
                       Email
                     </label>
@@ -100,7 +100,7 @@ const SignIn = () => {
                   <div className="mb-6">
                     <label
                       htmlFor="password"
-                      className="mb-2 block rounded text-sm font-bold text-black"
+                      className="mb-2 block rounded text-sm font-bold text-white"
                     >
                       Password
                     </label>
@@ -126,12 +126,12 @@ const SignIn = () => {
                   </div>
 
                   <button
-                    className="link mb-4 block text-sm text-black"
+                    className="link mb-4 block text-sm text-white"
                     type="button"
                     onClick={() => setView(VIEWS.FORGOTTEN_PASSWORD)}
                     // href='/auth/resetpassword'
                   >
-                    Forgot your password?
+                    Forgot password?
                   </button>
 
                   <button

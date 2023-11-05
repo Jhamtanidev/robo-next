@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import logo from "../../../public/Group 1.png";
+import logo from "../../../public/log.png";
 import { useAuth } from "../AuthProvider";
 import SignOut from "../SignOut";
 import "./nav.css";
@@ -23,18 +23,19 @@ function NavBar() {
           <div>
             <div className="flex items-center justify-between md:block">
               {/* LOGO */}
-              <div className="py-5 text-3xl font-bold text-color-secondary">
-                <a href="/">
-                  <Image
-                    src={logo}
-                    alt="Logo"
-                    width="100"
-                    height="75"
-                    className="cursor-pointer"
-                    priority
-                  />
-                </a>
-              </div>
+              <div className="mt-4 md:mb-0">
+            <a
+              href="/"
+              className="flex items-center text-2xl font-semibold text-black"
+            >
+              <Image src={logo} width="39px" height="51.356px" className="mr-3 h" alt="" />
+              Wander
+              <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-blue-400">
+                Sub
+              </span>
+            </a>
+          </div>
+
               {/* HAMBURGER BUTTON FOR MOBILE */}
               <div className="md:hidden">
                 <button

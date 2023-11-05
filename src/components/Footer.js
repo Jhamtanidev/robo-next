@@ -1,5 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import React from "react";
+import logo from "../../public/log.png";
+
 import {
   FaFacebook,
   FaDiscord,
@@ -26,7 +29,7 @@ const Footer = () => {
               href="/"
               className="flex items-center text-2xl font-semibold text-black"
             >
-              <img src="../../public/logo.png" className="mr-3 h-8" alt="" />
+              <Image src={logo} width="39px" height="51.356px" className="mr-3 h-8" alt="" />
               Wander
               <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-blue-400">
                 Sub
@@ -37,15 +40,11 @@ const Footer = () => {
             <div>
               <ul className="font-medium text-gray-500 dark:text-gray-800">
                 <li className="mb-4">
-                  <a href="/aboutus" className="hover:underline">
+                  <a href="/about" className="hover:underline">
                     Team
                   </a>
                 </li>
-                <li>
-                  <a href="/" className="hover:underline">
-                    Services
-                  </a>
-                </li>
+                
               </ul>
             </div>
             <div>

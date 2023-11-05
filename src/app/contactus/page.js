@@ -23,7 +23,7 @@ const Contact = () => {
           <div className="pr-8 md:w-1/2">
             <form>
               <motion.div className="mb-4" variants={inputVariants}>
-                <label className="mb-1 block text-sm font-medium">Name</label>
+                <label className="mb-1 block text-sm font-medium text-white">Name</label>
                 <input
                   type="text"
                   className="w-full rounded-lg border bg-gray-200 bg-opacity-60 px-3 py-2 focus:border-blue-500 focus:outline-none"
@@ -32,7 +32,7 @@ const Contact = () => {
               </motion.div>
 
               <motion.div className="mb-4" variants={inputVariants}>
-                <label className="mb-1 block text-sm font-medium">Email</label>
+                <label className="mb-1 block text-sm font-medium text-white">Email</label>
                 <input
                   type="email"
                   className="w-full rounded-lg border bg-gray-200 bg-opacity-60 px-3 py-2 focus:border-blue-500 focus:outline-none"
@@ -40,7 +40,7 @@ const Contact = () => {
                 />
               </motion.div>
               <motion.div className="mb-4" variants={inputVariants}>
-                <label className="mb-1 block text-sm font-medium">
+                <label className="mb-1 block text-sm font-medium text-white">
                   Message
                 </label>
                 <textarea

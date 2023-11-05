@@ -29,7 +29,13 @@ const Footer = () => {
               href="/"
               className="flex items-center text-2xl font-semibold text-black"
             >
-              <Image src={logo} width="39px" height="51.356px" className="mr-3 h-8" alt="" />
+              <Image
+                src={logo}
+                width="39px"
+                height="51.356px"
+                className="mr-3 h-8"
+                alt=""
+              />
               Wander
               <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-blue-400">
                 Sub
@@ -44,7 +50,6 @@ const Footer = () => {
                     Team
                   </a>
                 </li>
-                
               </ul>
             </div>
             <div>

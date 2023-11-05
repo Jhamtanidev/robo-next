@@ -37,7 +37,7 @@ const SignIn = () => {
       setErrorMsg(error.message);
     }
   }
- 
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100 bg-dashboard font-montserrat text-white">
       <div className="w-full max-w-md">
@@ -51,12 +51,16 @@ const SignIn = () => {
           <div className="text-center">
             {isSignUp ? (
               <>
-                <h2 className="text-white mb-4 text-2xl font-semibold ">Sign Up</h2>
+                <h2 className="mb-4 text-2xl font-semibold text-white ">
+                  Sign Up
+                </h2>
                 <p className="text-white">Create an account to get started.</p>
               </>
             ) : (
               <>
-                <h2 className="text-white mb-4 text-2xl font-semibold">Sign In</h2>
+                <h2 className="mb-4 text-2xl font-semibold text-white">
+                  Sign In
+                </h2>
                 <p className="text-white">Welcome back! Please sign in.</p>
               </>
             )}
@@ -163,4 +167,3 @@ const SignIn = () => {
 };
 
 export default SignIn;
-

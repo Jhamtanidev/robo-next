@@ -74,7 +74,9 @@ const Hero3 = () => {
                     WanderSub is a state-of-the-art underwater remotely operated
                     vehicle (ROV)
                   </p>
-                  <a href="/auth/signin"><button className="btn" >Explore Now</button></a>
+                  <a href="/auth/signin">
+                    <button className="btn">Explore Now</button>
+                  </a>
                 </div>
                 <div className="mb-12 text-center md:w-1/2 md:pr-10 md:text-left"></div>
               </div>

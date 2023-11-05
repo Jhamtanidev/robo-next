@@ -24,17 +24,23 @@ function NavBar() {
             <div className="flex items-center justify-between md:block">
               {/* LOGO */}
               <div className="mt-4 md:mb-0">
-            <a
-              href="/"
-              className="flex items-center text-2xl font-semibold text-black"
-            >
-              <Image src={logo} width="39px" height="51.356px" className="mr-3 h" alt="" />
-              Wander
-              <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-blue-400">
-                Sub
-              </span>
-            </a>
-          </div>
+                <a
+                  href="/"
+                  className="flex items-center text-2xl font-semibold text-black"
+                >
+                  <Image
+                    src={logo}
+                    width="39px"
+                    height="51.356px"
+                    className="h mr-3"
+                    alt=""
+                  />
+                  Wander
+                  <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-blue-400">
+                    Sub
+                  </span>
+                </a>
+              </div>
 
               {/* HAMBURGER BUTTON FOR MOBILE */}
               <div className="md:hidden">

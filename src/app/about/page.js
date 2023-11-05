@@ -570,7 +570,6 @@ const About = () => {
                   </a>
                 </li>
 
-               
                 <li>
                   <a
                     href="https://www.linkedin.com/in/patil-pranav-772575229/"

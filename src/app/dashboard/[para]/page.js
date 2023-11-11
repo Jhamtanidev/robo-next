@@ -7,8 +7,10 @@ import Turb from "@/components/parameters/Turb";
 import Alreco from "@/components/parameters/Alreco";
 import Tds from "@/components/parameters/Tds";
 import Sidebar from "@/components/Sidebar/sidebar";
-import ReletivePos from "@/components/parameters/Reletpos";
-import RovStatistic from "@/components/parameters/Rovstats";
+import ReletivePos from "@/components/parameters/ReletivePos";
+import RovStatistic from "@/components/parameters/RovStatistic";
+
+
 
 const page = ({ params }) => {
   let content;
@@ -30,7 +32,7 @@ const page = ({ params }) => {
       content = <RovStatistic />;
       break;
     case "reletpos":
-      content = <ReletivePos />;
+      content =  <ReletivePos />;
       break;
     default:
       content = <Alreco />; // Handle the default case if needed

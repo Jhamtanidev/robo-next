@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import supabase from "@/lib/supabase-browser";
 
-function reletpos() {
+function ReletivePos() {
   const [markerPositions, setMarkerPositions] = useState([]);
   const [showMarkerPopup, setShowMarkerPopup] = useState(false);
   const [selectedMarker, setSelectedMarker] = useState(null); // Track the selected marker
@@ -158,4 +158,4 @@ function reletpos() {
   );
 }
 
-export default reletpos;
+export default ReletivePos;

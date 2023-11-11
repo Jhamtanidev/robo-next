@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import supabase from "@/lib/supabase-browser";
 import Chart from "chart.js/auto";
 
-const rovStats = () => {
+const RovStatistic = () => {
   const [RecoStat, setRecoState] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -153,4 +153,4 @@ const rovStats = () => {
   );
 };
 
-export default rovStats;
+export default RovStatistic;

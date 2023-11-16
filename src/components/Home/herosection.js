@@ -97,7 +97,7 @@ const Hero3 = () => {
           <h2 className="mt-2 p-4 pb-0 text-center text-3xl font-bold ">
             Mission
           </h2>
-          <div className="grid  gap-3 p-8 pt-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
+          <div className="grid gap-3 p-8 pt-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
             <div
               className=" rounded-lg  p-4 shadow-md"
               style={{
@@ -224,7 +224,7 @@ const Hero3 = () => {
                 opportunities in underwater exploration.
               </div>
             </div>
-            <div className=" rounded-lg  p-4" style={{}}></div>
+            <div className=" hidden md:block rounded-lg  p-4" style={{}}></div>
             <div
               className="    rounded-lg  p-4 shadow-md"
               style={{
@@ -267,11 +267,11 @@ const Hero3 = () => {
         {features.map((feature, index) => (
           <div
             key={feature.id}
-            className={`flex p-8 font-montserrat ${
-              index % 2 === 1 ? "flex-row" : "flex-row-reverse"
-            } my-8 items-center`}
+            className={`flex p-8 font-montserrat flex-col ${
+              index % 2 === 1 ? "md:flex-row" : "md:flex-row-reverse"
+            } my-4 md:my-8 items-center`}
           >
-            <div className=" h-4 w-full rounded object-cover object-center md:w-1/3 lg:h-auto lg:w-1/2 lg:pl-10 lg:pr-10">
+            <div className=" h-auto w-full rounded object-cover object-center md:w-1/3 lg:h-auto lg:w-1/2 lg:pl-10 lg:pr-10">
               <img
                 src={feature.img}
                 alt={feature.title}
@@ -279,8 +279,8 @@ const Hero3 = () => {
               />
             </div>
             <div
-              className={`mt-6 w-1/2 w-full md:w-2/3 lg:mt-0 lg:w-1/2 lg:py-6 lg:pl-10 lg:pr-10  ${
-                index % 2 === 1 ? "text-right" : "text-left"
+              className={`mt-3 md:mt-6 w-full md:w-2/3 lg:mt-0 lg:w-1/2 lg:py-6 lg:pl-10 lg:pr-10 text-center ${
+                index % 2 === 1 ? "md:text-right" : "md:text-left"
               } mx-auto md:mx-0`}
             >
               <h3 className="py-4 text-2xl font-semibold ">{feature.title}</h3>
@@ -289,7 +289,7 @@ const Hero3 = () => {
           </div>
         ))}
 
-        <p className="ml-6 mr-6 flex w-full max-w-2xl flex-col items-center p-8 text-center text-xl text-black ">
+        <p className="mx-2 md:mx-6 flex w-full max-w-2xl flex-col items-center p-3 pb-8 text-justify md:p-8 text-center text-xl text-black ">
           Unleash the potential of underwater exploration with our
           state-of-the-art ROV, setting new standards for versatility,
           performance, and imaging quality in the world beneath the surface.

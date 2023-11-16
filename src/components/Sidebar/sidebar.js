@@ -5,13 +5,10 @@ import { HomeIcon, TemplateIcon, DatabaseIcon } from "@heroicons/react/solid";
 
 // Import your company logo
 
-// Import a sample user avatar (replace with your actual user avata
+// Import a sample user avatar (replace with your actual user avatar
 import SignOut from "../SignOut";
 import Link from "next/link";
 import {
-  FaMapMarked,
-  FaMapMarkedAlt,
-  FaMapMarker,
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
@@ -32,6 +29,7 @@ const Sidebar = () => {
           "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
         height: "100vh",
       }}
+      
     >
       {/* Company Name and Logo in a Row */}
       <div className="mb-4 flex items-center">

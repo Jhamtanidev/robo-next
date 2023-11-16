@@ -62,30 +62,30 @@ function NavBar() {
               }`}
           >
             <ul className="h-screen items-center justify-center md:flex md:h-auto ">
-              <li className="border-b-2 border-purple-900 py-2 text-center text-xl text-color-primary hover:bg-purple-900  md:border-b-0  md:px-6  md:hover:bg-transparent md:hover:text-purple-600">
+              <li className=" py-2 text-center text-xl text-color-primary hover:bg-blue-400  md:border-b-0 border-rounded  md:px-6  md:hover:bg-transparent md:hover:text-blue-400">
                 <Link href="/about" onClick={() => setNavbar(!navbar)}>
                   Team
                 </Link>
               </li>
 
-              <li className="border-b-2 border-purple-900 px-6 py-2 text-center  text-xl text-color-primary  hover:bg-purple-600  md:border-b-0  md:hover:bg-transparent md:hover:text-purple-600">
+              <li className=" px-6 py-2 text-center  text-xl text-color-primary  hover:bg-blue-400  md:border-b-0 border-rounded  md:hover:bg-transparent md:hover:text-blue-400">
                 <Link href="/contactus" onClick={() => setNavbar(!navbar)}>
                   Contact Us
                 </Link>
               </li>
-              {/* <li className="border-b-2 border-purple-900 px-6 py-2 text-center  text-xl text-color-primary  hover:bg-purple-600  md:border-b-0  md:hover:bg-transparent md:hover:text-purple-600">
+              {/* <li className=" px-6 py-2 text-center  text-xl text-color-primary  hover:bg-blue-400  md:border-b-0 border-rounded  md:hover:bg-transparent md:hover:text-blue-400">
                   <Link href="/services" onClick={() => setNavbar(!navbar)}>
                     Services
                   </Link>
                 </li> */}
               {user ? (
                 <>
-                  <li className="border-b-2 border-purple-900 px-6 py-2 text-center  text-xl text-color-primary  hover:bg-purple-600  md:border-b-0  md:hover:bg-transparent md:hover:text-purple-600">
+                  <li className=" px-6 py-2 text-center  text-xl text-color-primary  hover:bg-blue-400  md:border-b-0 border-rounded  md:hover:bg-transparent md:hover:text-blue-400">
                     <Link href="/profile" onClick={() => setNavbar(!navbar)}>
                       Profile
                     </Link>
                   </li>
-                  <li className="border-b-2 border-purple-900 px-6 py-2 text-center  text-xl text-color-primary  hover:bg-purple-600  md:border-b-0  md:hover:bg-transparent md:hover:text-purple-600">
+                  <li className=" px-6 py-2 text-center  text-xl text-color-primary  hover:bg-blue-400  md:border-b-0 border-rounded  md:hover:bg-transparent md:hover:text-blue-400">
                     <Link
                       href="/dashboard"
                       onClick={() => setNavbar(!navbar)}
@@ -93,14 +93,14 @@ function NavBar() {
                       Dashboard
                     </Link>
                   </li>
-                  <li className="border-b-2 border-purple-900 px-6 py-2 text-center  text-xl text-color-primary  hover:bg-purple-600  md:border-b-0  md:hover:bg-transparent md:hover:text-purple-600">
+                  <li className=" px-6 py-2 text-center  text-xl text-color-primary  hover:bg-blue-400  md:border-b-0 border-rounded  md:hover:bg-transparent md:hover:text-blue-400">
                     <Link href="/" onClick={() => setNavbar(!navbar)}>
                       <SignOut />
                     </Link>
                   </li>
                 </>
               ) : (
-                <li className="border-b-2 border-purple-900 px-6 py-2  text-center  text-xl text-color-primary  hover:bg-purple-600  md:border-b-0  md:hover:bg-transparent md:hover:text-purple-600">
+                <li className=" px-6 py-2  text-center  text-xl text-color-primary  hover:bg-blue-400  md:border-b-0 border-rounded  md:hover:bg-transparent md:hover:text-blue-400">
                   <Link
                     href="/auth/signin"
                     onClick={() => setNavbar(!navbar)}

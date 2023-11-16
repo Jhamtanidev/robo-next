@@ -33,7 +33,7 @@ const Footer = () => {
                 src={logo}
                 width="39px"
                 height="51.356px"
-                className="mr-3 h-8"
+                className="mr-3"
                 alt=""
               />
               Wander

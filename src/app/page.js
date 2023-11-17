@@ -1,6 +1,7 @@
 "use client";
 
 import HeroSection from "@/components/Home/herosection";
+import NavBar from "@/components/Navbar/Navbar";
 
 import Auth from "src/components/Auth";
 import { useAuth, VIEWS } from "src/components/AuthProvider";
@@ -26,6 +27,7 @@ export default function Home() {
   if (user) {
     return (
       <div>
+        {/* <NavBar /> */}
         <HeroSection />
       </div>
     );

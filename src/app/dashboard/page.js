@@ -5,7 +5,7 @@ import "./dashboard.css";
 import Sidebar from "@/components/Sidebar/sidebar";
 import { redirect } from "next/navigation";
 import Alreco from "@/components/parameters/Alreco";
-
+import DNavbar from "./DNavbar";
 const Dashboard = async (params) => {
   const supabase = createClient();
 
@@ -18,7 +18,7 @@ const Dashboard = async (params) => {
   }
 
   return (
-    <div className="relative flex min-h-screen w-full flex-row justify-between bg-dashboard bg-cover bg-no-repeat ">
+    <div className="relative flex min-h-screen w-full flex-col justify-between bg-dashboard bg-cover bg-no-repeat md:w-fit md:flex-row ">
       <Sidebar />
       <div className="m-10 flex grow flex-row items-center justify-center ">
         <div

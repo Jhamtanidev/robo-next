@@ -36,7 +36,7 @@ export default async function RootLayout({ children }) {
           <main>
             <AuthProvider accessToken={accessToken}>
               <div className="flex min-h-screen flex-col">
-                <Navbar className="fixed left-0 top-0 z-10 w-full" />{" "}
+                {/* <Navbar className="fixed left-0 top-0 z-10 w-full" />{" "} */}
                 {/* Add fixed class */}
                 {/* <Navbar className="fixed top-0 left-0 w-full z-10" />  */}
                 <NextTopLoader />

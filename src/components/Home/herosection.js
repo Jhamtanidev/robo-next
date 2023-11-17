@@ -5,6 +5,7 @@ import React from "react";
 
 import "./hero.css";
 import { Link } from "react-scroll";
+import NavBar from "../Navbar/Navbar";
 
 const features = [
   {
@@ -60,6 +61,7 @@ const features = [
 const Hero3 = () => {
   return (
     <div className="text-color-white">
+      <NavBar />
       <div className="bg-dm">
         <header className="sticky top-0 z-50">{/* <NavBar/> */}</header>
         <main>
@@ -224,7 +226,7 @@ const Hero3 = () => {
                 opportunities in underwater exploration.
               </div>
             </div>
-            <div className=" hidden md:block rounded-lg  p-4" style={{}}></div>
+            <div className=" hidden rounded-lg p-4  md:block" style={{}}></div>
             <div
               className="    rounded-lg  p-4 shadow-md"
               style={{
@@ -267,9 +269,9 @@ const Hero3 = () => {
         {features.map((feature, index) => (
           <div
             key={feature.id}
-            className={`flex p-8 font-montserrat flex-col ${
+            className={`flex flex-col p-8 font-montserrat ${
               index % 2 === 1 ? "md:flex-row" : "md:flex-row-reverse"
-            } my-4 md:my-8 items-center`}
+            } my-4 items-center md:my-8`}
           >
             <div className=" h-auto w-full rounded object-cover object-center md:w-1/3 lg:h-auto lg:w-1/2 lg:pl-10 lg:pr-10">
               <img
@@ -279,7 +281,7 @@ const Hero3 = () => {
               />
             </div>
             <div
-              className={`mt-3 md:mt-6 w-full md:w-2/3 lg:mt-0 lg:w-1/2 lg:py-6 lg:pl-10 lg:pr-10 text-center ${
+              className={`mt-3 w-full text-center md:mt-6 md:w-2/3 lg:mt-0 lg:w-1/2 lg:py-6 lg:pl-10 lg:pr-10 ${
                 index % 2 === 1 ? "md:text-right" : "md:text-left"
               } mx-auto md:mx-0`}
             >
@@ -289,7 +291,7 @@ const Hero3 = () => {
           </div>
         ))}
 
-        <p className="mx-2 md:mx-6 flex w-full max-w-2xl flex-col items-center p-3 pb-8 text-justify md:p-8 text-center text-xl text-black ">
+        <p className="mx-2 flex w-full max-w-2xl flex-col items-center p-3 pb-8 text-center text-justify text-xl text-black md:mx-6 md:p-8 ">
           Unleash the potential of underwater exploration with our
           state-of-the-art ROV, setting new standards for versatility,
           performance, and imaging quality in the world beneath the surface.

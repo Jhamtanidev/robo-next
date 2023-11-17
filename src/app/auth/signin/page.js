@@ -1,4 +1,5 @@
 import SignIn from "@/components/Auth/SignIn";
+import NavBar from "@/components/Navbar/Navbar";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import React from "react";
@@ -16,6 +17,7 @@ const page = async () => {
   }
   return (
     <div>
+      <NavBar />
       <SignIn />
     </div>
   );

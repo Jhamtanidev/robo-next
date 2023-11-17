@@ -1,6 +1,7 @@
 import SignOut from "../../../src/components/SignOut";
 import createClient from "src/lib/supabase-server";
 import Link from "next/link";
+import NavBar from "@/components/Navbar/Navbar";
 // import NavBar from '@/components/components/Navbar';
 export default async function Profile() {
   const supabase = createClient();
@@ -11,7 +12,7 @@ export default async function Profile() {
 
   return (
     <div className="bg-dashboard bg-cover text-white">
-      {/* <NavBar/> */}
+      <NavBar />
 
       <div className="flex min-h-screen items-center justify-center">
         <div

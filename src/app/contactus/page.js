@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import NavBar from "@/components/Navbar/Navbar";
 
 const Contact = () => {
   const formVariants = {
@@ -13,6 +14,7 @@ const Contact = () => {
   };
   return (
     <div className="flex min-h-screen flex-col bg-dashboard bg-cover bg-no-repeat   ">
+      <NavBar />
       <div className="flex flex-1 items-center justify-center">
         <motion.div
           className="flex w-full flex-col rounded-lg bg-white bg-opacity-30 p-8 shadow-lg backdrop-blur-md backdrop-filter sm:w-96 md:w-4/5 md:flex-row lg:w-3/5"

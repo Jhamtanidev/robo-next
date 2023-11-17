@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import NavBar from "@/components/Navbar/Navbar";
 import { MailIcon } from "@heroicons/react/solid";
 import React, { useEffect, useState } from "react";
 import { FaBeer, FaMailBulk } from "react-icons/fa";
@@ -12,6 +13,7 @@ const About = () => {
   return (
     <div className="bg-no repeat flex min-h-screen flex-col bg-dashboard bg-cover">
       {/* Our Story Section */}
+      <NavBar />
       <section classNameName="flex-grow flex w-full items-center justify-center px-50">
         <div className="flex justify-center">
           <h2 className="text-white">Our Team</h2>

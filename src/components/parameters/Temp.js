@@ -7,11 +7,11 @@ const Temp = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     filtergetTempItems();
-    const parameters = supabase
+    const rovparams = supabase
       .channel("custom-insert-channel")
       .on(
         "postgres_changes",
-        { event: "INSERT", schema: "public", table: "parameters" },
+        { event: "INSERT", schema: "public", table: "rovparams" },
         (payload) => {
           console.log("Change received!", payload);
           filtergetTempItems();
@@ -23,7 +23,7 @@ const Temp = () => {
     try {
       setLoading(true);
       const { data: RecoTemp } = await supabase
-        .from("parameters")
+        .from("rovparams")
         .select("created_at,temp ") // columns to select from the database
         .order("created_at", { ascending: false }); // sort the data so the last item comes on top;
 

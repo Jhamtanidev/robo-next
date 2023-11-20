@@ -9,9 +9,7 @@ import Tds from "@/components/parameters/Tds";
 import Sidebar from "@/components/Sidebar/sidebar";
 import ReletivePos from "@/components/parameters/ReletivePos";
 import RovStatistic from "@/components/parameters/RovStatistic";
-
-
-
+import NewPara from "@/components/parameters/NewPara"
 const page = ({ params }) => {
   let content;
 
@@ -32,7 +30,10 @@ const page = ({ params }) => {
       content = <RovStatistic />;
       break;
     case "reletpos":
-      content =  <ReletivePos />;
+      content = <ReletivePos />;
+      break;
+    case "rovparams":
+      content = <NewPara />;
       break;
     default:
       content = <Alreco />; // Handle the default case if needed

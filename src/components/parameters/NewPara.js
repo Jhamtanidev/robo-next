@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import supabase from "@/lib/supabase-browser";
 import Chart from "chart.js/auto";
 
-const Alreco = () => {
+const NewPara = () => {
   const [Records, setRecords] = useState([]);
   const [Reco, setReco] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -12,26 +12,29 @@ const Alreco = () => {
   useEffect(() => {
     handlegetItems();
     handleoneItems();
-    const parameters = supabase
-      .channel("custom-insert-channel")
-      .on(
-        "postgres_changes",
-        { event: "INSERT", schema: "public", table: "parameters" },
-        (payload) => {
-          console.log("Change received!", payload);
-          handlegetItems();
-        }
-      )
-      .subscribe();
+    
+const channels = supabase.channel('custom-insert-channel')
+.on(
+  'postgres_changes',
+  { event: 'INSERT', schema: 'public', table: 'rovparams' },
+  (payload) => {
+    console.log('Change received!', payload)
+  }
+)
+.subscribe()
+
+return () => {
+    channels.unsubscribe()
+  }
   }, []);
 
   const handlegetItems = async () => {
     try {
       setLoading(true);
       const { data: Records } = await supabase
-        .from("parameters")
-        .select("ph, tds, turb, bat_vol, created_at")
-        .order("created_at", { ascending: false });
+        .from("rovparams")
+        .select("pres, qrstr, depth, temp,  created_at")
+        .order("created_at", { ascending: true });
 
       console.log(Records);
       if (Records != null) {
@@ -47,8 +50,8 @@ const Alreco = () => {
     try {
       setLoading(true);
       const { data: Reco } = await supabase
-        .from("parameters")
-        .select("ph, tds, turb, bat_vol, created_at")
+        .from("rovparams")
+        .select("pres, qrstr, turb, temp, bat_vol, created_at")
         .order("created_at", { ascending: false })
         .limit(1);
       console.log(Reco);
@@ -60,82 +63,82 @@ const Alreco = () => {
     }
     setLoading(false);
   };
-  useEffect(() => {
-    const ctx = document.getElementById("myChart").getContext("2d");
-    const myChart = new Chart(ctx, {
-      type: "line",
-      data: {
-        labels: Records.map((Record) => Record.created_at),
-        datasets: [
-          {
-            data: Records.map((Record) => Record.temp),
-            label: "Temperature",
-            borderColor: "blue",
-            backgroundColor: "#7bb6dd",
-            fill: false,
-          },
-          {
-            data: Records.map((Record) => Record.ph),
-            label: "pH",
-            borderColor: "green",
-            backgroundColor: "#71d1bd",
-            fill: false,
-          },
-          {
-            data: Records.map((Record) => Record.turb),
-            label: "Turbidity",
-            borderColor: "orange",
-            backgroundColor: "#ffc04d",
-            fill: false,
-          },
-          {
-            data: Records.map((Record) => Record.tds),
-            label: "TDS",
-            borderColor: "red",
-            backgroundColor: "#d78f89",
-            fill: false,
-          },
-        ],
-      },
-      options: {
-        scales: {
-          x: {
-            ticks: {
-              color: "white", // Change the font color of x-axis ticks
-            },
-            title: {
-              display: true,
-              text: "Time",
-              color: "white", // Change the font color of x-axis title
-            },
-          },
-          y: {
-            ticks: {
-              color: "white", // Change the font color of y-axis ticks
-            },
-            title: {
-              display: true,
-              text: "Values",
-              color: "white", // Change the font color of y-axis title
-            },
-          },
-        },
-        plugins: {
-          legend: {
-            labels: {
-              color: "white", // Change the font color of legend labels
-            },
-          },
-        },
-      },
-    });
+//   useEffect(() => {
+//     const ctx = document.getElementById("myChart").getContext("2d");
+//     const myChart = new Chart(ctx, {
+//       type: "line",
+//       data: {
+//         labels: Records.map((Record) => Record.created_at),
+//         datasets: [
+//           {
+//             data: Records.map((Record) => Record.temp),
+//             label: "Temperature",
+//             borderColor: "blue",
+//             backgroundColor: "#7bb6dd",
+//             fill: false,
+//           },
+//           {
+//             data: Records.map((Record) => Record.pres),
+//             label: "pres",
+//             borderColor: "green",
+//             backgroundColor: "#71d1bd",
+//             fill: false,
+//           },
+//           {
+//             data: Records.map((Record) => Record.depth),
+//             label: "depth",
+//             borderColor: "orange",
+//             backgroundColor: "#ffc04d",
+//             fill: false,
+//           },
+//           {
+//             data: Records.map((Record) => Record.qrstr),
+//             label: "qrstr",
+//             borderColor: "red",
+//             backgroundColor: "#d78f89",
+//             fill: false,
+//           },
+//         ],
+//       },
+//       options: {
+//         scales: {
+//           x: {
+//             ticks: {
+//               color: "white", // Change the font color of x-axis ticks
+//             },
+//             title: {
+//               display: true,
+//               text: "Time",
+//               color: "white", // Change the font color of x-axis title
+//             },
+//           },
+//           y: {
+//             ticks: {
+//               color: "white", // Change the font color of y-axis ticks
+//             },
+//             title: {
+//               display: true,
+//               text: "Values",
+//               color: "white", // Change the font color of y-axis title
+//             },
+//           },
+//         },
+//         plugins: {
+//           legend: {
+//             labels: {
+//               color: "white", // Change the font color of legend labels
+//             },
+//           },
+//         },
+//       },
+//     });
 
-    return () => {
-      if (myChart) {
-        myChart.destroy();
-      }
-    };
-  }, [Records]);
+//     return () => {
+//       if (myChart) {
+//         myChart.destroy();
+//       }
+//     };
+//   }, [Records]);
 
   return (
     <div className=" flex-display container mx-auto my-1 p-4 font-montserrat ">
@@ -152,10 +155,10 @@ const Alreco = () => {
               >
                 <div className="pl-4">
                   <h2 className="text-top text-xl font-semibold text-gray-200 ">
-                    pH
+                    pres
                   </h2>
                   <h3 className="self-end text-lg text-color-white ">
-                    {record.ph}
+                    {record.pres}
                   </h3>
                 </div>
               </div>
@@ -184,10 +187,10 @@ const Alreco = () => {
               >
                 <div className="pl-4">
                   <h2 className="text-top text-xl font-semibold text-gray-200 ">
-                    Turbidity
+                    depth
                   </h2>
                   <h3 className="self-end text-lg text-color-white ">
-                    {record.turb}
+                    {record.depth}
                   </h3>
                 </div>
               </div>
@@ -200,26 +203,10 @@ const Alreco = () => {
               >
                 <div className="pl-4">
                   <h2 className="text-top text-xl font-semibold text-gray-200 ">
-                    TDS
+                    qrstr
                   </h2>
                   <h3 className="self-end text-lg text-color-white ">
-                    {record.tds}
-                  </h3>
-                </div>
-              </div>
-              <div
-                className=" card2 flex flex-col justify-between rounded-lg  shadow-md"
-                style={{
-                  background: "rgba(71, 71, 71, 0.25)",
-                  backdropFilter: "blur(17.019758224487305px)",
-                }}
-              >
-                <div className="pl-4">
-                  <h6 className="text-top text-xl font-semibold text-gray-200 ">
-                    Battery voltage
-                  </h6>
-                  <h3 className="self-end text-lg text-color-white ">
-                    {record.bat_vol}
+                    {record.qrstr}
                   </h3>
                 </div>
               </div>
@@ -227,7 +214,7 @@ const Alreco = () => {
           ))}
         </div>
       </div>
-      <div className="graph">
+      {/* <div className="gra">
         <div className="my-8 ">
           <div className="mx-auto  max-w-screen-lg max-w-screen-md">
             <div
@@ -241,7 +228,7 @@ const Alreco = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div
         className="rounded-lg shadow-lg"
@@ -253,38 +240,35 @@ const Alreco = () => {
         <div className="p-4">
           <table className="w-full table-auto text-left text-sm  text-gray-200">
             <thead>
-              <tr>
-                <th scope="col" className="py-3 md:px-6">
+              <tr className="border">
+                <th scope="col" className=" border py-3 md:px-6">
                   Created_at
                 </th>
-                <th scope="col" className="py-3 md:px-6">
-                  Temp
+                <th scope="col" className="border py-3 md:px-6">
+                  Temperature
                 </th>
-                <th scope="col" className="py-3 md:px-6">
-                  pH
+                <th scope="col" className="py-3 border md:px-6">
+                  Pressure
                 </th>
-                <th scope="col" className="py-3 md:px-6">
-                  Turbidity
+                <th scope="col" className="py-3 border  md:px-6">
+                  Depth
                 </th>
-                <th scope="col" className="py-3 md:px-6">
-                  TDS
-                </th>
-                <th scope="col" className="py-3 md:px-6">
-                  Battery_voltage
+                <th scope="col" className="py-3 border md:px-6">
+                  BarCode
                 </th>
               </tr>
             </thead>
             <tbody>
               {Records.map((Record) => (
-                <tr className="border-b">
+                <tr className="border">
                   <th scope="row" className=" px-6 py-4 font-medium  ">
                     {Record.created_at}
                   </th>
-                  <td className="px-6 py-4">{Record.temp}</td>
-                  <td className="px-6 py-4">{Record.ph}</td>
-                  <td className="px-6 py-4">{Record.turb}</td>
-                  <td className="px-6 py-4">{Record.tds}</td>
-                  <td className="px-6 py-4">{Record.bat_vol}</td>
+                  <td className="px-6 border py-4">{Record.pres}</td>
+                  <td className="px-6 border py-4">{Record.depth}</td>
+                  <td className="px-6 border py-4">{Record.temp}</td>
+                  <td className="px-6 border py-4">{Record.qrstr}</td>
+                  {/* <td className="px-6 py-4">{Record.bat_vol}</td> */}
                 </tr>
               ))}
             </tbody>
@@ -295,4 +279,4 @@ const Alreco = () => {
   );
 };
 
-export default Alreco;
+export default NewPara;

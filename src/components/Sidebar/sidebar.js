@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState } from "react";
-import { HomeIcon, TemplateIcon, DatabaseIcon } from "@heroicons/react/solid";
+import { HomeIcon, TemplateIcon, DatabaseIcon, NewspaperIcon } from "@heroicons/react/solid";
 
 // Import your company logo
 
@@ -26,7 +26,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className="sticky left-0 top-0 flex w-64 flex-col p-4 text-white  "
+      className="sticky left-0 top-0 flex w-64 flex-col  p-4 text-white  "
       style={{
         background:
           "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
@@ -62,6 +62,7 @@ const Sidebar = () => {
             className={`flex items-center text-gray-200 hover:text-blue-600 ${
               showSubsections ? "bg-gray-400" : ""
             }`}
+            // href="/dashboard"
             onClick={toggleSubsections}
           >
             <DatabaseIcon className="mr-2 h-5 w-5" />
@@ -122,6 +123,15 @@ const Sidebar = () => {
           >
             <FaMapMarkerAlt className="mr-2 h-5 w-5" />
             Object Mapping
+          </a>
+        </li>
+        <li className="mb-4">
+          <a
+            href="dashboard/rovparams"
+            className="flex items-center text-gray-200 hover:text-blue-600"
+          >
+            <NewspaperIcon className="mr-2 h-5 w-5" />
+            ROV_parameters
           </a>
         </li>
       </ul>

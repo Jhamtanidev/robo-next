@@ -88,7 +88,7 @@ const SignIn = () => {
                     </label>
                     <Field
                       className={cn(
-                        "input focus:shadow-outline w-full rounded border px-3 py-2 leading-tight focus:outline-none",
+                        "input focus:shadow-outline w-full rounded border px-3 py-2 leading-tight text-black  focus:outline-none",
                         errors.email && touched.email && "bg-red-50"
                       )}
                       id="email"
@@ -110,12 +110,13 @@ const SignIn = () => {
                     </label>
                     <Field
                       className={cn(
-                        "input focus:shadow-outline w-full rounded border px-3 py-2 leading-tight focus:outline-none",
+                        "input focus:shadow-outline w-full rounded border px-3 py-2 leading-tight text-black focus:outline-none",
                         errors.password && touched.password && "bg-red-50"
                       )}
                       id="password"
                       name="password"
                       type="password"
+                      placeholder="***********"
                     />
                     {errors.password && touched.password ? (
                       <div className="text-xs text-red-600">
@@ -154,7 +155,7 @@ const SignIn = () => {
               {isSignUp ? "Already have an account?" : "Don't have an account?"}
               <span
                 className="ml-2 cursor-pointer text-blue-300"
-                onClick={() => setIsSignUp(!isSignUp)}
+                onClick={() => setIsSignUp(!isSignUp) }
               >
                 {isSignUp ? "Sign In" : "Sign Up"}
               </span>

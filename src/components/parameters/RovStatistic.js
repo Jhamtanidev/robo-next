@@ -10,14 +10,13 @@ const RovStatistic = () => {
   useEffect(() => {
     filtergetstatItems();
 
-    const parameters = supabase
+    const channels = supabase
       .channel("custom-insert-channel")
       .on(
         "postgres_changes",
-        { event: "INSERT", schema: "public", table: "parameters" },
+        { event: "INSERT", schema: "public", table: "positional_para" },
         (payload) => {
           console.log("Change received!", payload);
-          filtergetstatItems();
         }
       )
       .subscribe();
@@ -28,7 +27,7 @@ const RovStatistic = () => {
       setLoading(true);
       const { data: RecoStat } = await supabase
         .from("positional_para")
-        .select("created_at,Acc_x,Acc_y,Acc_z,gyro_roll,gyro_pitch,gyro_yarn ") // columns to select from the database
+        .select("created_at,Acc_x,Acc_y,Acc_z,gyro_roll,gyro_pitch,gyro_yaw ") // columns to select from the database
         .order("created_at", { ascending: false }); // sort the data so the last item comes on top;
 
       // console.log(RecoStat.map((reco)=>{reco.gyro_roll}));
@@ -110,7 +109,7 @@ const RovStatistic = () => {
                 scope="col"
                 className="px-6 py-3 text-center text-xs font-medium  uppercase tracking-wider"
               >
-                gyro_yarn
+                gyro_yaw
               </th>
             </tr>
           </thead>
@@ -142,7 +141,7 @@ const RovStatistic = () => {
                   {Record.gyro_pitch}
                 </td>
                 <td scope="row" className="px-4 py-2">
-                  {Record.gyro_yarn}
+                  {Record.gyro_yaw}
                 </td>
               </tr>
             ))}

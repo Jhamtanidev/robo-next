@@ -36,6 +36,7 @@ const SignUp = () => {
   return (
     <div className=" form-container font-mon">
       {/* <h2 className="w-full text-center">Create Account</h2> */}
+
       <Formik
         initialValues={{
           email: "",
@@ -55,7 +56,7 @@ const SignUp = () => {
               </label>
               <Field
                 className={cn(
-                  "input focus:shadow-outline w-full rounded border px-3 py-2 leading-tight focus:outline-none",
+                  "input focus:shadow-outline w-full rounded border px-3 py-2 leading-tight text-black focus:outline-none",
                   errors.email && touched.email && "bg-red-50"
                 )}
                 id="email"
@@ -70,18 +71,19 @@ const SignUp = () => {
             <div className="mb-6">
               <label
                 htmlFor="email"
-                className="mb-2 block rounded text-sm font-bold text-gray-700"
+                className="text-black-700 mb-2 block rounded text-sm font-bold"
               >
                 Password
               </label>
               <Field
                 className={cn(
-                  "input focus:shadow-outline w-full rounded border px-3 py-2 leading-tight focus:outline-none",
+                  "input focus:shadow-outline w-full rounded border px-3 py-2 leading-tight text-black  focus:outline-none",
                   errors.email && touched.email && "bg-red-50"
                 )}
                 id="password"
                 name="password"
                 type="password"
+                placeholder="**************"
               />
               {errors.password && touched.password ? (
                 <div className="text-red-600">{errors.password}</div>

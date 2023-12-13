@@ -105,14 +105,14 @@ const ph = () => {
 
   return (
     <div
-      className=" card   container mx-auto p-4 "
+      className=" container mx-auto rounded-lg p-4 font-montserrat"
       style={{
         background:
           "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
       }}
     >
-      <div className="container1  ">
-        <div className="graph">
+      <div className="container1">
+        <div className="graph overflow-x-auto">
           <div className="my-8">
             <div className="mx-auto max-w-screen-lg max-w-screen-md">
               <div
@@ -127,9 +127,9 @@ const ph = () => {
             </div>
           </div>
         </div>
-        <div className="p-4">
+        <div className="flex w-full flex-row items-center justify-center p-4">
           <table
-            className="table w-full table-auto text-left font-montserrat  text-sm text-gray-200 "
+            className="table w-fit table-auto text-left font-montserrat  text-sm text-gray-200 "
             style={{
               background: "rgba(71, 71, 71, 0.25)",
               backdropfilter: "blur(17.019758224487305px)",
@@ -176,7 +176,7 @@ const ph = () => {
             Records having greater than 8.5 pH
           </h2>
 
-          <div className="align-items-right container  mt-4">
+          <div className="container  mt-4">
             <div
               className="card shadow-0 border"
               style={{
@@ -184,14 +184,13 @@ const ph = () => {
                 backdropfilter: "blur(17.019758224487305px)",
               }}
             >
-              <div className="card-body p-4">
+              <div className="card-body p-0">
                 <h3 className="sfw-normal mb-1 text-xl">pH Range</h3>
-
                 <p>
                   Max: <strong>8.5</strong>, Min: <strong>6.5</strong>
                 </p>
 
-                <div className="d-flex align-items-center flex-row">
+                <div className="align-items-center flex flex-row">
                   <i>
                     1.IS 10500-2012 Acceptable limits:6.5-8.5
                     <br />

@@ -12,20 +12,21 @@ const NewPara = () => {
   useEffect(() => {
     handlegetItems();
     handleoneItems();
-    
-const channels = supabase.channel('custom-insert-channel')
-.on(
-  'postgres_changes',
-  { event: 'INSERT', schema: 'public', table: 'rovparams' },
-  (payload) => {
-    console.log('Change received!', payload)
-  }
-)
-.subscribe()
 
-return () => {
-    channels.unsubscribe()
-  }
+    const channels = supabase
+      .channel("custom-insert-channel")
+      .on(
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "rovparams" },
+        (payload) => {
+          console.log("Change received!", payload);
+        }
+      )
+      .subscribe();
+
+    return () => {
+      channels.unsubscribe();
+    };
   }, []);
 
   const handlegetItems = async () => {
@@ -63,82 +64,82 @@ return () => {
     }
     setLoading(false);
   };
-//   useEffect(() => {
-//     const ctx = document.getElementById("myChart").getContext("2d");
-//     const myChart = new Chart(ctx, {
-//       type: "line",
-//       data: {
-//         labels: Records.map((Record) => Record.created_at),
-//         datasets: [
-//           {
-//             data: Records.map((Record) => Record.temp),
-//             label: "Temperature",
-//             borderColor: "blue",
-//             backgroundColor: "#7bb6dd",
-//             fill: false,
-//           },
-//           {
-//             data: Records.map((Record) => Record.pres),
-//             label: "pres",
-//             borderColor: "green",
-//             backgroundColor: "#71d1bd",
-//             fill: false,
-//           },
-//           {
-//             data: Records.map((Record) => Record.depth),
-//             label: "depth",
-//             borderColor: "orange",
-//             backgroundColor: "#ffc04d",
-//             fill: false,
-//           },
-//           {
-//             data: Records.map((Record) => Record.qrstr),
-//             label: "qrstr",
-//             borderColor: "red",
-//             backgroundColor: "#d78f89",
-//             fill: false,
-//           },
-//         ],
-//       },
-//       options: {
-//         scales: {
-//           x: {
-//             ticks: {
-//               color: "white", // Change the font color of x-axis ticks
-//             },
-//             title: {
-//               display: true,
-//               text: "Time",
-//               color: "white", // Change the font color of x-axis title
-//             },
-//           },
-//           y: {
-//             ticks: {
-//               color: "white", // Change the font color of y-axis ticks
-//             },
-//             title: {
-//               display: true,
-//               text: "Values",
-//               color: "white", // Change the font color of y-axis title
-//             },
-//           },
-//         },
-//         plugins: {
-//           legend: {
-//             labels: {
-//               color: "white", // Change the font color of legend labels
-//             },
-//           },
-//         },
-//       },
-//     });
+  //   useEffect(() => {
+  //     const ctx = document.getElementById("myChart").getContext("2d");
+  //     const myChart = new Chart(ctx, {
+  //       type: "line",
+  //       data: {
+  //         labels: Records.map((Record) => Record.created_at),
+  //         datasets: [
+  //           {
+  //             data: Records.map((Record) => Record.temp),
+  //             label: "Temperature",
+  //             borderColor: "blue",
+  //             backgroundColor: "#7bb6dd",
+  //             fill: false,
+  //           },
+  //           {
+  //             data: Records.map((Record) => Record.pres),
+  //             label: "pres",
+  //             borderColor: "green",
+  //             backgroundColor: "#71d1bd",
+  //             fill: false,
+  //           },
+  //           {
+  //             data: Records.map((Record) => Record.depth),
+  //             label: "depth",
+  //             borderColor: "orange",
+  //             backgroundColor: "#ffc04d",
+  //             fill: false,
+  //           },
+  //           {
+  //             data: Records.map((Record) => Record.qrstr),
+  //             label: "qrstr",
+  //             borderColor: "red",
+  //             backgroundColor: "#d78f89",
+  //             fill: false,
+  //           },
+  //         ],
+  //       },
+  //       options: {
+  //         scales: {
+  //           x: {
+  //             ticks: {
+  //               color: "white", // Change the font color of x-axis ticks
+  //             },
+  //             title: {
+  //               display: true,
+  //               text: "Time",
+  //               color: "white", // Change the font color of x-axis title
+  //             },
+  //           },
+  //           y: {
+  //             ticks: {
+  //               color: "white", // Change the font color of y-axis ticks
+  //             },
+  //             title: {
+  //               display: true,
+  //               text: "Values",
+  //               color: "white", // Change the font color of y-axis title
+  //             },
+  //           },
+  //         },
+  //         plugins: {
+  //           legend: {
+  //             labels: {
+  //               color: "white", // Change the font color of legend labels
+  //             },
+  //           },
+  //         },
+  //       },
+  //     });
 
-//     return () => {
-//       if (myChart) {
-//         myChart.destroy();
-//       }
-//     };
-//   }, [Records]);
+  //     return () => {
+  //       if (myChart) {
+  //         myChart.destroy();
+  //       }
+  //     };
+  //   }, [Records]);
 
   return (
     <div className=" flex-display container mx-auto my-1 p-4 font-montserrat ">
@@ -237,7 +238,7 @@ return () => {
           backdropfilter: "blur(17.019758224487305px)",
         }}
       >
-        <div className="p-4">
+        <div className="flex w-full flex-row items-center justify-center p-4">
           <table className="w-full table-auto text-left text-sm  text-gray-200">
             <thead>
               <tr className="border">
@@ -247,13 +248,13 @@ return () => {
                 <th scope="col" className="border py-3 md:px-6">
                   Temperature
                 </th>
-                <th scope="col" className="py-3 border md:px-6">
+                <th scope="col" className="border py-3 md:px-6">
                   Pressure
                 </th>
-                <th scope="col" className="py-3 border  md:px-6">
+                <th scope="col" className="border py-3  md:px-6">
                   Depth
                 </th>
-                <th scope="col" className="py-3 border md:px-6">
+                <th scope="col" className="border py-3 md:px-6">
                   BarCode
                 </th>
               </tr>
@@ -264,10 +265,10 @@ return () => {
                   <th scope="row" className=" px-6 py-4 font-medium  ">
                     {Record.created_at}
                   </th>
-                  <td className="px-6 border py-4">{Record.pres}</td>
-                  <td className="px-6 border py-4">{Record.depth}</td>
-                  <td className="px-6 border py-4">{Record.temp}</td>
-                  <td className="px-6 border py-4">{Record.qrstr}</td>
+                  <td className="border px-6 py-4">{Record.pres}</td>
+                  <td className="border px-6 py-4">{Record.depth}</td>
+                  <td className="border px-6 py-4">{Record.temp}</td>
+                  <td className="border px-6 py-4">{Record.qrstr}</td>
                   {/* <td className="px-6 py-4">{Record.bat_vol}</td> */}
                 </tr>
               ))}

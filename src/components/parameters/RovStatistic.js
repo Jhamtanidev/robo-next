@@ -46,20 +46,20 @@ const RovStatistic = () => {
 
   return (
     <div
-      className="card mx-auto  rounded-lg font-montserrat text-color-white shadow-lg"
+      className="h-50 container mx-auto  rounded-lg font-montserrat text-color-white shadow-lg"
       style={{
         background:
           "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
       }}
     >
       <div
-        className="rounded-lg p-4"
+        className="overflow-x-auto rounded-lg p-4"
         style={{
-          background: "rgba(71, 71, 71, 0.25)",
+          background: "rgba(71, 710, 71, 0.25)",
           backdropfilter: "blur(17.019758224487305px)",
         }}
       >
-        <table className="w-full table-auto rounded-t-2xl">
+        <table className="w-full table-auto rounded-t-2xl ">
           <thead className="rounded-t-2xl border">
             <tr className="rounded-t-2xl border">
               <th scope="col" className="px-4 py-2">

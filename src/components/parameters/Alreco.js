@@ -138,9 +138,9 @@ const Alreco = () => {
   }, [Records]);
 
   return (
-    <div className=" flex-display container mx-auto my-1 p-4 font-montserrat ">
-      <div className="container mx-auto px-4 py-6 lg:px-10 lg:py-8 ">
-        <div className="grid  gap-1 sm:grid-cols-2 sm:p-2  md:grid-cols-3 lg:grid-cols-5 ">
+    <div className="flex-display md container my-1 font-montserrat max-sm:w-screen ">
+      <div className="container mx-auto py-6 lg:px-10 lg:py-8 ">
+        <div className="grid w-full gap-1 max-sm:grid-cols-2 max-sm:gap-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 ">
           {Reco.map((record) => (
             <>
               <div
@@ -228,23 +228,26 @@ const Alreco = () => {
         </div>
       </div>
       <div className="graph">
-        <div className="my-8 ">
-          <div className="mx-auto  max-w-screen-lg max-w-screen-md">
+        <div className="max-sm:my-4 md:my-8">
+          <div className="relative mx-auto max-sm:overflow-x-auto">
             <div
-              className="card relative w-full rounded-xl border border-gray-400 shadow-xl "
+              className="card relative h-full rounded-xl border border-gray-400 shadow-xl max-sm:w-fit "
               style={{
                 background: "rgba(71, 71, 71, 0.25)",
                 backdropfilter: "blur(17.019758224487305px)",
               }}
             >
-              <canvas id="myChart" />
+              <canvas
+                id="myChart"
+                className="relative max-sm:min-h-[30rem] max-sm:min-w-[90rem] "
+              />
             </div>
           </div>
         </div>
       </div>
 
       <div
-        className="rounded-lg shadow-lg"
+        className=" overflow-y-auto rounded-lg shadow-lg"
         style={{
           background: "rgba(71, 71, 71, 0.25)",
           backdropfilter: "blur(17.019758224487305px)",

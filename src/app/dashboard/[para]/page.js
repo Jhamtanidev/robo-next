@@ -9,7 +9,7 @@ import Tds from "@/components/parameters/Tds";
 import Sidebar from "@/components/Sidebar/sidebar";
 import ReletivePos from "@/components/parameters/ReletivePos";
 import RovStatistic from "@/components/parameters/RovStatistic";
-import NewPara from "@/components/parameters/NewPara"
+import NewPara from "@/components/parameters/NewPara";
 const page = ({ params }) => {
   let content;
 
@@ -44,7 +44,7 @@ const page = ({ params }) => {
     <div className="relative flex-row bg-dashboard lg:flex">
       <Sidebar />
       <div className="container mx-auto mt-4 lg:mt-12 ">
-        <div className="mx-2 p-4 shadow-sm ">{content}</div>
+        <div className="mx-2 p-0 shadow-sm">{content}</div>
       </div>
     </div>
   );

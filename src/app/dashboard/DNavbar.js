@@ -24,7 +24,7 @@ function NavBar() {
 
   return (
     <div>
-      <nav className=" nav  left-0 right-0 top-0 z-10 h-20 w-full bg-transparent font-montserrat shadow-xl ">
+      <nav className=" nav left-0 right-0 top-0  z-10 h-20 w-full bg-transparent font-montserrat shadow-xl md:hidden">
         <div className="mx-auto flex flex-col justify-between md:flex-row md:items-center md:px-8 lg:max-w-7xl">
           <div>
             <div className="flex items-center justify-between md:block">

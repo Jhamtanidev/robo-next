@@ -1,7 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState } from "react";
-import { HomeIcon, TemplateIcon, DatabaseIcon, NewspaperIcon } from "@heroicons/react/solid";
+import {
+  HomeIcon,
+  TemplateIcon,
+  DatabaseIcon,
+  NewspaperIcon,
+} from "@heroicons/react/solid";
 
 // Import your company logo
 
@@ -26,7 +31,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className="sticky left-0 top-0 flex w-64 flex-col  p-4 text-white  "
+      className="sticky bottom-0 left-0 top-0 z-50 flex w-64 flex-col p-4 text-white max-md:hidden  "
       style={{
         background:
           "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
@@ -127,7 +132,7 @@ const Sidebar = () => {
         </li>
         <li className="mb-4">
           <a
-            href="dashboard/rovparams"
+            href="/dashboard/rovparams"
             className="flex items-center text-gray-200 hover:text-blue-600"
           >
             <NewspaperIcon className="mr-2 h-5 w-5" />

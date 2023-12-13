@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import React from "react";
-
+import { motion } from "framer-motion";
 import "./hero.css";
 import { Link } from "react-scroll";
 import NavBar from "../Navbar/Navbar";
@@ -59,6 +59,23 @@ const features = [
 ];
 
 const Hero3 = () => {
+  const headingOptions = {
+    initial: {
+      y: "-100%",
+      opacity: 0,
+    },
+    whileInView: {
+      y: 0,
+      delay: 0.5,
+      opacity: 1,
+    },
+  };
+  const textOptions = {
+    ...headingOptions,
+    transition: {
+      delay: 0.3,
+    },
+  };
   return (
     <div className="text-color-white">
       <NavBar />
@@ -88,13 +105,23 @@ const Hero3 = () => {
       </div>
       <div className="flex flex-col items-center justify-center bg-gray-100 font-montserrat text-black">
         <div className="flex w-full flex-col items-center p-8 pb-0  ">
-          <h2 className="p-4 pb-3 text-center text-3xl font-bold ">Vision</h2>
+          <>
+            <motion.h2
+              {...headingOptions}
+              className="p-4 pb-3 text-center text-3xl font-bold "
+            >
+              Vision
+            </motion.h2>
+          </>
           <div className="self-center">
-            <p className="max-w-2xl text-center text-xl  text-black">
+            <motion.p
+              {...textOptions}
+              className="max-w-2xl text-center text-xl  text-black"
+            >
               "To unlock the mysteries of the world beneath the waves and
               empower humanity to explore, understand, and protect our planet's
               underwater realms through cutting-edge ROV technology."
-            </p>
+            </motion.p>
           </div>
           <h2 className="mt-2 p-4 pb-0 text-center text-3xl font-bold ">
             Mission

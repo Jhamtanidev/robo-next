@@ -124,13 +124,13 @@ function ReletivePos() {
     >
       <h1 className="mb-4 text-2xl font-semibold">Relative Position of ROV</h1>
       <div
-        className="relative w-1/2 rounded-lg bg-sky-50 p-4 shadow-md"
+        className=" graph relative w-full overflow-x-auto rounded-lg bg-sky-50 p-4 shadow-xl"
         style={{
           background: "rgba(71, 71, 71, 0.25)",
           backdropfilter: "blur(17.019758224487305px)",
         }}
       >
-        <div className="relative  h-96">
+        <div className="relative  h-96 ">
           <canvas
             ref={canvasRef}
             className="absolute left-0 top-0 cursor-pointer"

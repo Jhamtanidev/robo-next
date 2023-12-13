@@ -112,9 +112,9 @@ const turb = () => {
             "linear-gradient(0deg, rgba(184, 184, 184, 0.27), rgba(184, 184, 184, 0.27))",
         }}
       >
-        <div className="graph">
+        <div className="graph overflow-x-auto">
           <div className="my-8">
-            <div className="mx-auto max-w-screen-md">
+            <div className="mx-auto w-fit max-w-screen-md">
               <div
                 className="rounded-xl border border-gray-400 shadow-xl"
                 style={{
@@ -122,7 +122,7 @@ const turb = () => {
                   backdropfilter: "blur(17.019758224487305px)",
                 }}
               >
-                <canvas id="myChart" />
+                <canvas id="myChart" className="min-h-[30rem]" />
               </div>
             </div>
           </div>
